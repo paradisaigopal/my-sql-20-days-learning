@@ -1,0 +1,137 @@
+frontend
+--------------------
+--------------------
+frontend is the visual and interactive layer of a website or application that users directly see and interact with through the web browser or mobileapp.
+
+It is also called the client side because it runs on the users device (browser/mobile)
+
+Responsibility of frontend
+--------------------------
+--------------------------
+display web pages and user interface(UI).
+Accepts user input (forms, buttons, search boxes)
+validates user input before sending it to the server.
+calls backend APIs to fetch or send data
+Display the responses received from the backend 
+provides animations and interactive effects.
+
+
+Backend
+-------------------
+-------------------
+backend is the server-side part of an application,
+user cannot see it directly. But it performs all business logic security data processing and data base operations.
+
+It acts the brain of the application.
+
+Responsibility of Backend
+-------------------------
+-------------------------
+
+1) process clients request
+2) implements business logic.
+3) connects with data base
+4) performs crud operations
+5) authenticates and authorize users
+6) encrypts passwords and sensitive data
+7) generative data
+8) returns response to the frontend.
+
+API (Application programming interface)
+--------------------------------------
+--------------------------------------
+
+An API is a set of rules and protocols that all our two different applications of systems to communicate and exchange data without exposing their internal implementation.
+
+It acts as a bridge between fronted and backend or two different software systems.
+
+Restaurant analogy
+
+you(client)--------------->gives order to waiter (API)--------------->kitchen(server) prepare food
+kitchen ---------------> gives food to waiter(API)-------------> you receive your meal.
+
+Storage areas
+---------------
+---------------
+As part of our applications we require to store data customer information ,billing information or call information ...etc to store this data we required storage areas.
+
+there are 2 types of storage areas. Such as 
+
+1. temporary storage area 
+2. permanent storage area 
+
+Temporary storage areas
+-----------------------
+-----------------------
+These are the memory areas where the data will be stored temporally.
+
+Eg: All JVM memory areas (like heap area, stack area, method area , pc registers native method stack)
+
+once JVM shut down all these memory areas will be cleared automatically.
+
+permanent storage areas 
+-----------------------
+-----------------------
+it is also known as persistent storage areas here we can store data permanent
+
+ex:- file system ,databases, data warehouse, big data....etc.
+
+File management system
+----------------------
+----------------------
+A file management system is a system where data is stored in files on the operating systems each application program must handle its own storage data retrieval and updating file system can be provided by the local operating system.
+
+File system are best suitable for to store very less amount of information (like KB).
+
+Ex:- A library management system storing books in separate text files likes, book .text, members .txt. 
+
+
+Limitations of file management system
+-------------------------------------
+-------------------------------------
+
+1) Data redundancy : same data  is stored in multiple files.
+
+2) Data in consistency : update in one File may not be reflected in another.
+
+3) poor data security  : no proper accessed  control 
+
+4) difficult data Retiral : searching required customs programs.
+
+5) Integity issues  : No constraints( ex roll number uniquess)
+
+6) Scalibility issues : hard to manage as data grows.
+
+To overcome the above problems of file system, we shouldgo for data bases.
+
+Data base mangement system
+--------------------------
+--------------------------
+
+A DBMS is a collection of programs that enable users to create, manage, and manipulate databases. It acts as an interface between users and the database.  
+
+Advantages:-
+
+1. We can store a huge amount of information in databases.
+2. Query language support is available.
+3.Inside a database, data will be stored in the form of tables. While developing database tables, database administrators follow various normalization techniques. We can implement various constraints like UNIQUE key constraints,                                                  PRIMARY KEY constraints, etc., which prevent data duplication. Hence, there is no chance of data inconsistency problems.
+4. To access data present in the database, a compulsory username and password must be required; hence, data is secured.
+
+(IQ) What is the difference between FMS and DMS?
+
+1. Data is stored in separate files. Data is stored and managed in a database.
+2. High data redundancy may occur. Data redundancy can be reduced using proper database design and normalization.
+3. Data is comparatively difficult to manage and manipulate. Data is easier to maintain and update using DBMS tools and queries.
+4. Security and access control are generally limited. Provides authentication and authorization, roles, and access control mechanisms.
+5. Data sharing and concurrent access are more difficult to manage. Multiple users can access and manage data simultaneously with concurrency control.
+6. Relationships between data stored in separate files not inherently managed.Supports relationships between tables using keys such as primary key and foreign key.
+7. Backup and recovery are generally manual or difficult to manage.Provides backup and recovery mechanism.
+8. Data inconsistency may occur and integrity is difficult to enforce.Provides mechanism to maintain data consistency and integrity using constraints and transactions.
+9. Suitable for simple applications with limited data management requirements.Suitable for small, medium and large applications, depending on the DBMS and architecture.
+     
+File system stores data in separate files and may leaddata redundancy and security issues.
+DBMS stores data in structured manner using tables, reduces redundancy, provides security, supports multiple users and ensures data consistency and integrity.
+
+
+
+
