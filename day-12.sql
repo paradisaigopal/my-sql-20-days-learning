@@ -1,0 +1,99 @@
+USE DA9;
+SHOW TABLES;  
+CREATE TABLE STUDENTS(
+    STUDENT_ID INT PRIMARY KEY,
+    STUDENT_NAME VARCHAR(50),
+    COURSE VARCHAR(50)
+);
+
+INSERT INTO STUDENTS VALUES
+(101,'Rahul','Java Full Stack'),
+(102,'Priya','Python Full Stack'),
+(103,'Kiran','Data Science'),
+(104,'Sneha','Java Full Stack'),
+(105,'Ajay','Testing');
+
+select*from STUDENTS;
+
+CREATE TABLE PLACED_STUDENTS (
+    STUDENT_ID INT PRIMARY KEY,
+    STUDENT_NAME VARCHAR(50),
+    COMPANY_NAME VARCHAR(50)
+);
+INSERT INTO PLACED_STUDENTS VALUES
+(103,'Kiran','TCS'),
+(104,'Sneha','Infosys'),
+(105,'Ajay','Wipro'),
+(106,'Pooja','Accenture'),
+(107,'Ramesh','Capgemini');
+
+select*from PLACED_STUDENTS;
+
+SELECT STUDENT_NAME FROM STUDENTS
+UNION
+SELECT STUDENT_NAME FROM STUDENTS;
+
+SELECT STUDENT_NAME FROM STUDENTS
+UNION ALL
+SELECT STUDENT_NAME FROM STUDENTS;
+
+SELECT STUDENT_NAME FROM STUDENTS
+INTERSECT
+SELECT STUDENT_NAME FROM STUDENTS;
+
+SELECT STUDENT_NAME FROM STUDENTS
+EXCEPT
+SELECT STUDENT_NAME FROM STUDENTS;
+
+USE DA9;
+SHOW TABLES;
+DROP TABLE employees;
+drop table projects;
+
+CREATE TABLE EMPLOYEES (
+    EMP_ID INT PRIMARY KEY,
+    NAME VARCHAR(100),
+    DEPARTMENT_ID INT,
+    SALARY DECIMAL(10,2)
+);
+ 
+CREATE TABLE DEPARTMENTS (
+    DEPARTMENT_ID INT PRIMARY KEY,
+    DEPARTMENT_NAME VARCHAR(100)
+);
+ 
+CREATE TABLE PROJECTS (
+    PROJECT_ID INT PRIMARY KEY,
+    PROJECT_NAME VARCHAR(100),
+    EMP_ID INT
+);
+ 
+INSERT INTO Departments (department_id, department_name) VALUES
+(1, 'Human Resources'), (2, 'Engineering'), (3, 'Marketing'), (4, 'Finance'), (5, 'Operations'),(6,'HR');
+ 
+INSERT INTO Employees (emp_id, name, department_id, salary) VALUES
+(101, 'Arjun', 1, 50000), (102, 'Bhavana', 2, 65000), (103, 'Charan', 2, 72000),
+(104, 'Divya', 3, 45000), (105, 'Eswar', NULL, 40000), (106, 'Farhan', 4, 55000),
+(107, 'Gowri', 2, 62000), (108, 'Harish', 5, 48000), (109, 'Ishita', NULL, 53000),
+(110, 'Jagan', 3, 60000);
+ 
+INSERT INTO Projects (project_id, project_name, emp_id) VALUES
+(201, 'Website Redesign', 102), (202, 'Mobile Banking App', 103), (203, 'Marketing Campaign', 104),
+(204, 'Payroll System', 106), (205, 'Backend Optimization', 107), (206, 'Cloud Migration', 102),
+(207, 'Customer Analytics', 110), (208, 'Inventory System', NULL);
+
+SELECT*FROM EMPLOYEES;
+SELECT*FROM DEPARTMENTS;
+SELECT*FROM PROJECTS;
+
+-- INNER JOIN
+
+SELECT E.EMP_ID,E.NAME,D.DEPARTMENT_NAME
+FROM EMPLOYEES E 
+INNER JOIN DEPARTMENTS D 
+ON E.DEPARTMENT_ID=D.DEPARTMENT_ID;
+
+SELECT E.EMP_ID,E.NAME,P.PROJECT_NAME
+FROM EMPLOYEES E 
+INNER JOIN PROJECTS P 
+ON E.EMP_ID=P.EMP_ID;
